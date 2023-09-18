@@ -5,17 +5,16 @@ import {
   hendlePanding,
   hendleRrejected,
   arrAuthTunk,
-  initialState,
+  authInitialState,
   hendLogOut,
 } from './authService';
-import {  logOutThunk } from './authThunk';
+import { logOutThunk } from './authThunk';
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState,
+  initialState: authInitialState,
   extraReducers: builder => {
     builder
-    //   .addCase(currentUserThunk.fulfilled, hendleFulfilledCurrentUser)
       .addCase(logOutThunk.fulfilled, hendLogOut)
 
       .addMatcher(

@@ -1,7 +1,9 @@
-import { contactsInitalState } from './contacts/initialState';
-import { filterInitialState } from './filter/initialState';
+// import { authInitialState } from './auth/authService';
+// import { contactsInitalState } from './contacts/initialState';
+// import { filterInitialState } from './filter/initialState';
 
-export const initialState = {
-  contacts:contactsInitalState,
-  filter: filterInitialState,
-};
+//  const initialState = {
+//   contacts: contactsInitalState,
+//   filter: filterInitialState,
+//   auth: authInitialState,
+// };

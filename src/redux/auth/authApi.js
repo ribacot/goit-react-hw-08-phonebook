@@ -8,7 +8,9 @@ export const createUserAPI = async data => {
       data,
     });
 
-    instance.defaults.headers.common['Authorization'] = `Bearer ${resp.data.token}`;
+    instance.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${resp.data.token}`;
     return resp.data;
   } catch (error) {
     console.log(error);
@@ -17,7 +19,9 @@ export const createUserAPI = async data => {
 export const loginUserAPI = async data => {
   try {
     const resp = await instance({ url: '/users/login', method: 'POST', data });
-    instance.defaults.headers.common['Authorization'] =  `Bearer ${resp.data.token}`;
+    instance.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${resp.data.token}`;
     return resp.data;
   } catch (error) {
     console.log(error);
@@ -33,12 +37,3 @@ export const logOutApi = async () => {
     console.log(error);
   }
 };
-// export const currentUserApi = async () => {
-//   try {
-//     const resp = await instance({ url: '/users/current' });
-//     console.log('current', resp.data);
-//     return resp.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
