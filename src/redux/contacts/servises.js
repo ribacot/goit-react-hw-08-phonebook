@@ -1,12 +1,12 @@
 import * as thunk from './productThunk';
 
-const arrThunk = [
+export const arrContactsThunk = [
   thunk.getContactsThunk,
   thunk.addContactsThunk,
   thunk.delContactsThunk,
 ];
 
-export const optThunk = type => arrThunk.map(el => el[type]);
+export const optThunk = ({type,arr}) => arr.map(el => el[type]);
 
 export const hendlePanding = state => ({
   ...state,

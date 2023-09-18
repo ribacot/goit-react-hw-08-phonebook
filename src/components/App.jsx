@@ -1,37 +1,38 @@
-import Container from './container/Container';
 import { FormPhone } from './form/FormPhone';
-import { ContactsList } from './contacts_list/ContactsList';
-import Search from './search/Search';
-import { useDispatch} from 'react-redux';
-import { getContactsThunk } from 'redux/contacts/productThunk';
-import { useEffect } from 'react';
-import { useGetFilteredContacts } from 'redux/hooks';
+import { AuthForma } from './authForma/authForma';
+import Home from './home/home';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './layout/layout';
+import StartPage from './startPage/startPage';
+// import { useSelector } from 'react-redux';
+
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const { contacts, isLoading, error } = useGetFilteredContacts();
-
-  useEffect(() => {
-    dispatch(getContactsThunk());
-  }, [dispatch]);
+  // const {token}=useSelector(state=>state.auth)
 
   return (
-    <>
-      <Container title="Phone book">
-        <FormPhone />
-      </Container>
-      <Container title="Contacts">
-        {error && <p>Error!!!!!!</p>}
-        {contacts?.length ? (
-          <>
-            <Search />
-            <ContactsList />
-          </>
-        ) : (
-          <p className="not_found">Phone book is empty</p>
-        )}
-        {isLoading && <p>Loading...</p>}
-      </Container>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<StartPage />} />
+        <Route path="/login" element={<AuthForma />} />
+        <Route path="/singup" element={<AuthForma isLogIn={false} />} />
+        <Route path="/contacts" element={<Home />} />
+        <Route path="/add_contact" element={<FormPhone />} />
+      </Route>
+    </Routes>
   );
 };
+
+{
+  /* <Routes>
+  <Route path="/" element={<Layout />}>
+    <Route index element={<TrandingMovies />} />
+    <Route path="movie" element={<Movies />} />
+    <Route path="selectedmovie/:id" element={<SelectedMovie />}>
+      <Route path="cast" element={<Cast />} />
+      <Route path="reviews" element={<Reviews />} />
+    </Route>
+    <Route path="*" element={<div>STOP</div>} />
+  </Route>
+</Routes>; */
+}

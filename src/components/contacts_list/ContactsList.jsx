@@ -2,15 +2,23 @@ import { FiXSquare } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 
 import css from './ContactsList.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { delContactsThunk } from 'redux/contacts/productThunk';
 import { useGetFilteredContacts } from 'redux/hooks';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { instance } from 'redux/auth/instansAxiosAPI';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
-
+const {token}=useSelector(state=>state.auth)
   const {filteredContacts} = useGetFilteredContacts();
+  const navigate=useNavigate()
+useEffect(() => {
 
+  !token&&navigate("/")
+
+}, [])
   return (
     <>
       {filteredContacts?.length ? (

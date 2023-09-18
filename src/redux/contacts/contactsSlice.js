@@ -10,6 +10,7 @@ const {
   hendlePanding,
   hendleRrejected,
   optThunk,
+  arrContactsThunk,
 } = servises;
 
 export const contactsSlice = createSlice({
@@ -21,8 +22,14 @@ export const contactsSlice = createSlice({
       .addCase(getContactsThunk.fulfilled, hendleFulfilledget)
       .addCase(addContactsThunk.fulfilled, hendleFulfilledAdd)
       .addCase(delContactsThunk.fulfilled, hendleFulfilledDel)
-      .addMatcher(isAnyOf(...optThunk('pending')), hendlePanding)
-      .addMatcher(isAnyOf(...optThunk('rejected')), hendleRrejected);
+      .addMatcher(
+        isAnyOf(...optThunk({ type: 'pending', arr: arrContactsThunk })),
+        hendlePanding
+      )
+      .addMatcher(
+        isAnyOf(...optThunk({ type: 'rejected', arr: arrContactsThunk })),
+        hendleRrejected
+      );
   },
 });
 
