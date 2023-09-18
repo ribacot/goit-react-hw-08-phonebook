@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Container from 'components/container/Container';
 import { useNavigate } from 'react-router-dom';
 import { loginUserThunk, userCreateThunk } from 'redux/auth/authThunk';
-import { instance } from 'redux/auth/instansAxiosAPI';
 
 export const AuthForma = ({ isLogIn = true }) => {
   const [name, setName] = useState('');

@@ -6,7 +6,6 @@ import {
   hendleRrejected,
   arrAuthTunk,
   initialState,
-  hendleFulfilledCurrentUser,
   hendLogOut,
 } from './authService';
 import {  logOutThunk } from './authThunk';

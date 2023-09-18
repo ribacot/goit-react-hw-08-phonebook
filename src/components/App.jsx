@@ -23,16 +23,3 @@ export const App = () => {
   );
 };
 
-{
-  /* <Routes>
-  <Route path="/" element={<Layout />}>
-    <Route index element={<TrandingMovies />} />
-    <Route path="movie" element={<Movies />} />
-    <Route path="selectedmovie/:id" element={<SelectedMovie />}>
-      <Route path="cast" element={<Cast />} />
-      <Route path="reviews" element={<Reviews />} />
-    </Route>
-    <Route path="*" element={<div>STOP</div>} />
-  </Route>
-</Routes>; */
-}

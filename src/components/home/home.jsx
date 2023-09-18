@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { instance } from 'redux/auth/instansAxiosAPI';
-// import { currentUserThunk } from 'redux/auth/authThunk';
 import { getContactsThunk } from 'redux/contacts/productThunk';
 import { useGetFilteredContacts } from 'redux/hooks';
 
@@ -20,7 +19,7 @@ export default function Home() {
 
     token && dispatch(getContactsThunk());
     !token && navigate('/');
-  }, [dispatch, token]);
+  }, [dispatch, token,navigate]);
 
   return (
     <Container title="Contacts">

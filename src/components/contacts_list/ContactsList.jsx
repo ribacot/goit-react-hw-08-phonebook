@@ -7,7 +7,6 @@ import { delContactsThunk } from 'redux/contacts/productThunk';
 import { useGetFilteredContacts } from 'redux/hooks';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { instance } from 'redux/auth/instansAxiosAPI';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ useEffect(() => {
 
   !token&&navigate("/")
 
-}, [])
+}, [token,navigate])
   return (
     <>
       {filteredContacts?.length ? (

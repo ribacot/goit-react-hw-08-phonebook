@@ -16,7 +16,7 @@ export const FormPhone = () => {
   const navigate = useNavigate();
   useEffect(() => {
     !token && navigate('/');
-  }, [token]);
+  }, [token,navigate]);
 
   const hendleChange = e => {
     const { name, value } = e.target;
