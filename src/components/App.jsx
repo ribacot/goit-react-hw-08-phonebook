@@ -17,6 +17,8 @@ export const App = () => {
         <Route path="/singup" element={<AuthForma isLogIn={false} />} />
         <Route path="/contacts" element={<Home />} />
         <Route path="/add_contact" element={<FormPhone />} />
+        <Route path="*" element={<div className='fallback'><h2>Page not found</h2></div>} />
+
       </Route>
     </Routes>
   );
