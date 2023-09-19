@@ -71,3 +71,6 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+.fallback{
+  margin: 0 auto;
+}
