@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[297],{3297:function(t,e,n){n.r(e),n.d(e,{default:function(){return f}});var r=n(1090),c=n(2791),u=n(9434),o=n(7689),a=n(6351),s=n(184);function f(){var t=(0,u.v9)(a.Hz).token,e=(0,o.s0)();return(0,c.useEffect)((function(){t&&e("/contacts")}),[t,e]),(0,s.jsx)(r.Z,{children:(0,s.jsx)("h1",{children:"HELLO turn button Login"})})}}}]);
+//# sourceMappingURL=297.ab19929d.chunk.js.map
