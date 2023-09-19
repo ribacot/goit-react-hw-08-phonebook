@@ -8,6 +8,7 @@ import Search from 'components/search/Search';
 import { instance } from 'redux/auth/instansAxiosAPI';
 import { getContactsThunk } from 'redux/contacts/productThunk';
 import { useGetFilteredContacts } from 'redux/hooks';
+import cssbtn from '../form/FormFone.module.css';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -24,10 +25,20 @@ export default function Home() {
       (instance.defaults.headers.common['Authorization'] = `Bearer ${token}`);
     token && dispatch(getContactsThunk());
   }, [dispatch, token]);
+  const onAddContactNav = () => navigate('/add_contact');
+
 
   return (
     <Container title="Contacts">
       {error && <p>Error!!!!!!</p>}
+      <button
+        className={cssbtn.btn_add}
+        style={{ marginBottom: '15px' }}
+        onClick={onAddContactNav}
+      >
+        Add Contact
+      </button>
+
       {contacts?.length ? (
         <>
           <Search />

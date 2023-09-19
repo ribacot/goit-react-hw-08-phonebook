@@ -31,8 +31,8 @@
 }
 
 .btn_add {
-  padding: 5px;
-  width: 100px;
+  padding: 10px;
+ min-width: 100px;
   border: none;
   border-radius: 5px;
   color: white;

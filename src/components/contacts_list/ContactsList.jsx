@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import css from './ContactsList.module.css';
-import cssbtn from '../form/FormFone.module.css';
 
 import { delContactsThunk } from 'redux/contacts/productThunk';
 import { useGetFilteredContacts } from 'redux/hooks';
@@ -22,17 +21,9 @@ export const ContactsList = () => {
     !token && navigate('/');
   }, [token, navigate]);
 
-  const onAddContactNav = () => navigate('/add_contact');
 
   return (
     <>
-      <button
-        className={cssbtn.btn_add}
-        style={{ marginBottom: '15px' }}
-        onClick={onAddContactNav}
-      >
-        Add Contact
-      </button>
 
       {filteredContacts?.length ? (
         <ul className={css.listContacts}>
