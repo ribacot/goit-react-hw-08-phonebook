@@ -26,7 +26,6 @@ export default function FormPhone() {
   }, [token, navigate]);
 
   useEffect(() => {
-    console.log('contacts', contacts.length);
     !contacts.length &&
       token &&
       (instance.defaults.headers.common['Authorization'] = `Bearer ${token}`);
