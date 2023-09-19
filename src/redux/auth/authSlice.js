@@ -1,11 +1,11 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { optThunk } from 'redux/contacts/servises';
+import { authInitialState } from './initialState';
 import {
   hendleFulfilled,
   hendlePanding,
   hendleRrejected,
   arrAuthTunk,
-  authInitialState,
   hendLogOut,
 } from './authService';
 import { logOutThunk } from './authThunk';

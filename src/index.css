@@ -51,7 +51,8 @@ textarea {
   outline: none;
 }
 
-.container{
+.container {
+  margin: 0 auto;
   padding: 40px 50px;
   width: 400px;
   box-shadow: 1px 2px 1px 0px #2e2f4214, 1px 3px 15px 6px #422e3a29,
@@ -64,4 +65,9 @@ h2 {
 
 .not_found {
   text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
 }

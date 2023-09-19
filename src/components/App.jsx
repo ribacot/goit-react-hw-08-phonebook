@@ -1,15 +1,14 @@
-import { FormPhone } from './form/FormPhone';
-import { AuthForma } from './authForma/authForma';
-import Home from './home/home';
 import { Route, Routes } from 'react-router-dom';
-import Layout from './layout/layout';
-import StartPage from './startPage/startPage';
-// import { useSelector } from 'react-redux';
+import { lazy } from 'react';
 
+import Layout from './layout/layout';
+
+const StartPage =lazy(()=>import('./startPage/startPage'))
+const FormPhone =lazy(()=>import('./form/FormPhone'))
+const Home =lazy(()=>import('./home/home'))
+const AuthForma =lazy(()=>import('./authForma/authForma'))
 
 export const App = () => {
-  // const {token}=useSelector(state=>state.auth)
-
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -22,4 +21,3 @@ export const App = () => {
     </Routes>
   );
 };
-

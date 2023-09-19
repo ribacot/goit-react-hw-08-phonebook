@@ -1,12 +1,5 @@
 import { loginUserThunk, userCreateThunk, logOutThunk } from './authThunk';
-
-export const authInitialState = {
-  token: '',
-  userName: '',
-  isLoading: false,
-  error: '',
-  currentUser: null,
-};
+import { authInitialState } from './initialState';
 export const arrAuthTunk = [loginUserThunk, userCreateThunk, logOutThunk];
 
 export const hendleFulfilled = (state, { payload }) => {
@@ -25,4 +18,4 @@ export const hendleRrejected = (state, { payload }) => {
   state.isLoading = false;
   state.error = payload.messege;
 };
-export const hendLogOut = state => ({ ...state, ...authInitialState });
+export const hendLogOut = () => ({ ...authInitialState });

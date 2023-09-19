@@ -1,22 +1,37 @@
 import { useEffect, useState } from 'react';
-import css from './FormFone.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContactsThunk } from 'redux/contacts/productThunk';
-import Container from 'components/container/Container';
 import { useNavigate } from 'react-router-dom';
 
-export const FormPhone = () => {
+import css from './FormFone.module.css';
+import {
+  addContactsThunk,
+  getContactsThunk,
+} from 'redux/contacts/productThunk';
+import Container from 'components/container/Container';
+import { instance } from 'redux/auth/instansAxiosAPI';
+import { selectAuth, selectContacts } from 'redux/selectors';
+
+export default function FormPhone() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const { contacts } = useSelector(state => state.contacts);
-  const { token } = useSelector(state => state.auth);
+  const { contacts } = useSelector(selectContacts);
+  const { token } = useSelector(selectAuth);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   useEffect(() => {
-    !token && navigate('/');
-  }, [token,navigate]);
+    !token && navigate('/login');
+  }, [token, navigate]);
+
+  useEffect(() => {
+    console.log('contacts', contacts.length);
+    !contacts.length &&
+      token &&
+      (instance.defaults.headers.common['Authorization'] = `Bearer ${token}`);
+    !contacts.length && dispatch(getContactsThunk());
+  }, [contacts.length, dispatch, token]);
 
   const hendleChange = e => {
     const { name, value } = e.target;
@@ -84,7 +99,7 @@ export const FormPhone = () => {
             value={number}
           />
         </div>
-        <div>
+        <div className={css.btnContainer}>
           <button
             className={css.btn_add}
             type="submit"
@@ -99,4 +114,4 @@ export const FormPhone = () => {
       </form>
     </Container>
   );
-};
+}

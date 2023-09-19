@@ -1,25 +1,39 @@
 import { FiXSquare } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 
-import css from './ContactsList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { delContactsThunk } from 'redux/contacts/productThunk';
-import { useGetFilteredContacts } from 'redux/hooks';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import css from './ContactsList.module.css';
+import cssbtn from '../form/FormFone.module.css';
+
+import { delContactsThunk } from 'redux/contacts/productThunk';
+import { useGetFilteredContacts } from 'redux/hooks';
+import { selectAuth } from 'redux/selectors';
+
 export const ContactsList = () => {
   const dispatch = useDispatch();
-const {token}=useSelector(state=>state.auth)
-  const {filteredContacts} = useGetFilteredContacts();
-  const navigate=useNavigate()
-useEffect(() => {
+  const { token } = useSelector(selectAuth);
+  const { filteredContacts } = useGetFilteredContacts();
+  const navigate = useNavigate();
 
-  !token&&navigate("/")
+  useEffect(() => {
+    !token && navigate('/');
+  }, [token, navigate]);
 
-}, [token,navigate])
+  const onAddContactNav = () => navigate('/add_contact');
+
   return (
     <>
+      <button
+        className={cssbtn.btn_add}
+        style={{ marginBottom: '15px' }}
+        onClick={onAddContactNav}
+      >
+        Add Contact
+      </button>
+
       {filteredContacts?.length ? (
         <ul className={css.listContacts}>
           {filteredContacts?.map(({ name, id, number }) => (

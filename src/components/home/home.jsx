@@ -1,9 +1,10 @@
-import { ContactsList } from 'components/contacts_list/ContactsList';
-import Container from 'components/container/Container';
-import Search from 'components/search/Search';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+import { ContactsList } from 'components/contacts_list/ContactsList';
+import Container from 'components/container/Container';
+import Search from 'components/search/Search';
 import { instance } from 'redux/auth/instansAxiosAPI';
 import { getContactsThunk } from 'redux/contacts/productThunk';
 import { useGetFilteredContacts } from 'redux/hooks';
@@ -15,11 +16,14 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    !token && navigate('/login');
+  }, [token, navigate]);
 
+  useEffect(() => {
+    token &&
+      (instance.defaults.headers.common['Authorization'] = `Bearer ${token}`);
     token && dispatch(getContactsThunk());
-    !token && navigate('/');
-  }, [dispatch, token,navigate]);
+  }, [dispatch, token]);
 
   return (
     <Container title="Contacts">

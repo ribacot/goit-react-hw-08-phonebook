@@ -6,7 +6,7 @@ export const arrContactsThunk = [
   thunk.delContactsThunk,
 ];
 
-export const optThunk = ({type,arr}) => arr.map(el => el[type]);
+export const optThunk = ({ type, arr }) => arr.map(el => el[type]);
 
 export const hendlePanding = state => ({
   ...state,
@@ -39,6 +39,3 @@ export const hendleRrejected = (state, { payload }) => ({
   isLoading: false,
   error: payload,
 });
-
-
-

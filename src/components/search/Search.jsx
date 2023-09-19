@@ -1,9 +1,11 @@
-import css from './Search.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+
+import css from './Search.module.css';
 import { chengeFilter } from 'redux/filter/filterSlise';
+import { selectFilter } from 'redux/selectors';
 
 export default function Search() {
-  const { filter } = useSelector(state => state.filter);
+  const { filter } = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const onChenge = e => {

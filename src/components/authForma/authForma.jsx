@@ -1,20 +1,21 @@
 import { useEffect, useState } from 'react';
-import css from '../form/FormFone.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import Container from 'components/container/Container';
 import { useNavigate } from 'react-router-dom';
-import { loginUserThunk, userCreateThunk } from 'redux/auth/authThunk';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const AuthForma = ({ isLogIn = true }) => {
+import css from '../form/FormFone.module.css';
+import Container from 'components/container/Container';
+import { loginUserThunk, userCreateThunk } from 'redux/auth/authThunk';
+import { selectAuth } from 'redux/selectors';
+
+export default function AuthForma({ isLogIn = true }) {
   const [name, setName] = useState('');
   const [email, setMail] = useState('');
   const [password, setPassword] = useState('');
-  const { token } = useSelector(state => state.auth);
+  const { token } = useSelector(selectAuth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //  token&& dispatch(currentUserThunk())
     token && navigate('/contacts');
   }, [token, navigate]);
 
@@ -128,4 +129,4 @@ export const AuthForma = ({ isLogIn = true }) => {
       </form>
     </Container>
   );
-};
+}
