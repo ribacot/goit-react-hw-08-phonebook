@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[297],{3297:function(e,t,n){n.r(t),n.d(t,{default:function(){return c}});var r=n(1090),u=n(184);function c(){return(0,u.jsx)(r.Z,{children:(0,u.jsx)("h1",{children:"HELLO turn button Login"})})}}}]);
+//# sourceMappingURL=297.a6ede700.chunk.js.map
