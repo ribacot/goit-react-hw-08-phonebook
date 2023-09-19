@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.9aff21d1.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.e723c676.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.c50de717.js",
     "static/js/297.ab19929d.chunk.js": "/goit-react-hw-08-phonebook/static/js/297.ab19929d.chunk.js",
-    "static/js/300.2f042ccd.chunk.js": "/goit-react-hw-08-phonebook/static/js/300.2f042ccd.chunk.js",
+    "static/js/300.deed9f50.chunk.js": "/goit-react-hw-08-phonebook/static/js/300.deed9f50.chunk.js",
     "static/css/637.1dcd8f3e.chunk.css": "/goit-react-hw-08-phonebook/static/css/637.1dcd8f3e.chunk.css",
     "static/js/637.2a42410a.chunk.js": "/goit-react-hw-08-phonebook/static/js/637.2a42410a.chunk.js",
     "static/js/975.11e28127.chunk.js": "/goit-react-hw-08-phonebook/static/js/975.11e28127.chunk.js",
     "static/js/853.1653d5ae.chunk.js": "/goit-react-hw-08-phonebook/static/js/853.1653d5ae.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.9aff21d1.css.map": "/goit-react-hw-08-phonebook/static/css/main.9aff21d1.css.map",
-    "main.e723c676.js.map": "/goit-react-hw-08-phonebook/static/js/main.e723c676.js.map",
+    "main.c50de717.js.map": "/goit-react-hw-08-phonebook/static/js/main.c50de717.js.map",
     "297.ab19929d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/297.ab19929d.chunk.js.map",
-    "300.2f042ccd.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/300.2f042ccd.chunk.js.map",
+    "300.deed9f50.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/300.deed9f50.chunk.js.map",
     "637.1dcd8f3e.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/637.1dcd8f3e.chunk.css.map",
     "637.2a42410a.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/637.2a42410a.chunk.js.map",
     "975.11e28127.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/975.11e28127.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.9aff21d1.css",
-    "static/js/main.e723c676.js"
+    "static/js/main.c50de717.js"
   ]
 }
