@@ -47,7 +47,7 @@ export default function Home() {
       ) : (
         <p className="not_found">Phone book is empty</p>
       )}
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <div className='fallback'><p>Loading...</p></div>}
     </Container>
   );
 }
